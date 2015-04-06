@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'web-console', '~> 2.0'
