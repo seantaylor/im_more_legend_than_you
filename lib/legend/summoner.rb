@@ -1,8 +1,14 @@
 module Legend
   class Summoner
-    def initialize(id)
-      @summoner = Legend::Client.new
-        .client.summoners_by_names(summoner_names: Array.wrap(id))
+    attr_reader :name, :id, :summoner_level
+
+    def initialize(name)
+      data = Legend::Client.new.get_summoner(name: name)
+
+      @name = data.name
+      @id = data.id
+      @summoner_level = data.level
     end
+
   end
 end

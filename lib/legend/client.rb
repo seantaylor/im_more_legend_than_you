@@ -1,9 +1,23 @@
 module Legend
   class Client
-    attr_reader :client
 
     def initialize
       @client = Taric.client(region: :na)
     end
+
+    def get_summoner(name:)
+      summoner_data = client.summoners_by_names(summoner_names: Array.wrap(name))
+
+      OpenStruct.new(
+        name: summoner_data[name]['name'],
+        id: summoner_data[name]['id'],
+        level: summoner_data[name]['summonerLevel']
+      )
+    end
+
+    private
+
+    attr_reader :client
+
   end
 end
