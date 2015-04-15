@@ -1,5 +1,7 @@
 module Legend
   class Summoner
+    include Comparable
+
     attr_reader :name, :id, :summoner_level
 
     def initialize(name)
@@ -8,6 +10,10 @@ module Legend
       @name = data.name
       @id = data.id
       @summoner_level = data.level
+    end
+
+    def <=> summoner
+      kills <=> summoner.kills
     end
 
     def kills
