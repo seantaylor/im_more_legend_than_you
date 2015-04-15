@@ -21,10 +21,14 @@ module Legend
       all_champion_data['totalDeathsPerSession']
     end
 
+    def games_played
+      all_champion_data['totalSessionsPlayed']
+    end
+
     private
 
     def all_champion_data
-      raw_data['champions'].select{ |x| x['id'] == ALL_CHAMPIONS }.first['stats']
+      @all_champion_data ||= raw_data['champions'].select{ |x| x['id'] == ALL_CHAMPIONS }.first['stats']
     end
 
     attr_reader :raw_data

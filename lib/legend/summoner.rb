@@ -13,7 +13,7 @@ module Legend
     end
 
     def <=> summoner
-      kills <=> summoner.kills
+      (kills/games_played) <=> (summoner.kills/summoner.games_played)
     end
 
     def kills
@@ -26,6 +26,10 @@ module Legend
 
     def assists
       stats.assists
+    end
+
+    def games_played
+      stats.games_played
     end
 
     private
