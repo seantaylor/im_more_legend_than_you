@@ -25,7 +25,7 @@ module Legend
     private
 
     def sanitize name
-      name.downcase.downcase.gsub(/\s/, "")
+      name.downcase.gsub(/\s/, "")
     end
 
     def stats
