@@ -1,7 +1,5 @@
 module Legend
   class Summoner
-    include Comparable
-
     attr_reader :name, :id, :summoner_level
 
     def initialize(name:, id:, level:)
@@ -10,12 +8,12 @@ module Legend
       @summoner_level = level
     end
 
-    def <=> summoner
-      (kills/games_played) <=> (summoner.kills/summoner.games_played)
-    end
-
     def kills
       stats.kills
+    end
+
+    def average_kills
+      kills/games_played
     end
 
     def deaths
@@ -35,6 +33,5 @@ module Legend
     def stats
       @stats ||= Legend::Client.new.get_stats(summoner_id: id)
     end
-
   end
 end
