@@ -4,12 +4,10 @@ module Legend
 
     attr_reader :name, :id, :summoner_level
 
-    def initialize(name)
-      data = Legend::Client.new.get_summoner(name: sanitize(name))
-
-      @name = data.name
-      @id = data.id
-      @summoner_level = data.level
+    def initialize(name:, id:, level:)
+      @name = name
+      @id = id
+      @summoner_level = level
     end
 
     def <=> summoner
@@ -33,10 +31,6 @@ module Legend
     end
 
     private
-
-    def sanitize name
-      name.downcase.gsub(/\s/, "")
-    end
 
     def stats
       @stats ||= Legend::Client.new.get_stats(summoner_id: id)

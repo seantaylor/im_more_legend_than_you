@@ -6,9 +6,11 @@ module Legend
     end
 
     def get_summoner(name:)
-      summoner_data = client.summoners_by_names(summoner_names: Array.wrap(name))
+      summoner_data = client.summoners_by_names(
+        summoner_names: Array.wrap(sanitize(name))
+      )
 
-      OpenStruct.new(
+      Legend::Summoner.new(
         name: summoner_data[name]['name'],
         id: summoner_data[name]['id'],
         level: summoner_data[name]['summonerLevel']
@@ -22,6 +24,10 @@ module Legend
     private
 
     attr_reader :client
+
+    def sanitize name
+      name.downcase.gsub(/\s/, "")
+    end
 
   end
 end
