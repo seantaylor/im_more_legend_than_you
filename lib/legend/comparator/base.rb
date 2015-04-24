@@ -5,10 +5,6 @@ module Legend
         @summoners = summoners
       end
 
-      def sort
-        raise NotImplementedError.new('Should be implemented in subclass')
-      end
-
       private
 
       attr_reader :summoners
