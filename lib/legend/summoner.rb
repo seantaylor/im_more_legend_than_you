@@ -24,6 +24,10 @@ module Legend
       stats.assists
     end
 
+    def average_assists
+      assists/games_played
+    end
+
     def games_played
       stats.games_played
     end
