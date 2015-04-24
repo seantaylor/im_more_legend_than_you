@@ -1,17 +1,19 @@
 module Legend
   module Comparator
-    class Kills
+    class Base
       def initialize(summoners:)
         @summoners = summoners
       end
 
       def sort
-        @summoners.sort_by(&:average_kills).reverse
+        raise NotImplementedError.new('Should be implemented in subclass')
       end
 
       private
 
       attr_reader :summoners
+
     end
   end
+
 end
