@@ -25,6 +25,10 @@ module Legend
       all_champion_data['totalSessionsPlayed']
     end
 
+    def damage_taken
+      all_champion_data['totalDamageTaken']
+    end
+
     private
 
     def all_champion_data

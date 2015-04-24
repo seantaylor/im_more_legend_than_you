@@ -32,6 +32,14 @@ module Legend
       stats.games_played
     end
 
+    def damage_taken
+      stats.damage_taken
+    end
+
+    def average_damage_taken
+      damage_taken/games_played
+    end
+
     private
 
     def stats
