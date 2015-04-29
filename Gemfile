@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.1'
 
-gem 'taric', '>= 0.1.14'
+gem 'taric'
 
 gem 'sqlite3'
 
