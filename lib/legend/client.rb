@@ -18,7 +18,7 @@ module Legend
     end
 
     def get_stats(summoner_id:)
-      ChamptionStats.new raw_data: client.ranked_stats(summoner_id: summoner_id)
+      ChampionStats.new raw_data: client.ranked_stats(summoner_id: summoner_id)
     end
 
     private
