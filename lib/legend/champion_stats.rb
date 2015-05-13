@@ -1,11 +1,11 @@
 module Legend
-  class AggregateStats
+  class ChamptionStats
 
     # When LoL gives us stats they break it down by champion then give us
     # Champion '0' which is everything aggregated
     ALL_CHAMPIONS = 0
 
-    def initialize(raw_data:)
+    def initialize(raw_data: )
       @raw_data = raw_data
     end
 
