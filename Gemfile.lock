@@ -156,7 +156,6 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
     slop (3.6.0)
-    spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -200,7 +199,6 @@ DEPENDENCIES
   rails (= 4.2.1)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
-  spring
   sqlite3
   taric
   uglifier (>= 1.3.0)
